@@ -30,7 +30,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -55,18 +56,28 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
               "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
+              "optimization": true,
+              "vendorChunk": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "outputHashing": "all"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget" : "payroll-online:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "payroll-online:build:production"
@@ -99,6 +110,21 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/proctractor.conf.js",
+            "devServerTarget": "payroll-online:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "payroll-online:serve:production"
+            },
+            "development": {
+              "devServerTarget": "payroll-online:serve:development"
+            }
           }
         }
       }
