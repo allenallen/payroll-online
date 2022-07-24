@@ -1,1 +1,48 @@
-<p>edit works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Update Employee</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Close Modal')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="this.editForm" (ngSubmit)="this.submit()" class="row g-3">
+        <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" [(ngModel)]="employee.firstName" formControlName="firstName" id="firstName" class="form-control">
+            <div *ngIf="form['firstName'].touched && form['firstName'].invalid" class="alert alert-danger">
+                <div *ngIf="form['firstName'].errors && form['firstName'].errors['required']">First Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" [(ngModel)]="employee.lastName" formControlName="lastName" id="lastName" class="form-control">
+            <div *ngIf="form['lastName'].touched && form['lastName'].invalid" class="alert alert-danger">
+                <div *ngIf="form['lastName'].errors && form['lastName'].errors['required']">Last Name is required.</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="employeeNumber" class="form-label">Employee Number</label>
+            <input type="text" [(ngModel)]="employee.employeeNumber" formControlName="employeeNumber" id="employeeNumber" class="form-control">
+            <div *ngIf="form['employeeNumber'].touched && form['employeeNumber'].invalid" class="alert alert-danger">
+                <div *ngIf="form['employeeNumber'].errors && form['employeeNumber'].errors['required']">Last Name is
+                    required.</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="birthday" class="form-label">Birthday</label>
+            <input type="date" [(ngModel)]="employee.birthday" formControlName="birthday" id="birthday" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label for="contactNumber" class="form-label">Contact Number</label>
+            <input type="text" [(ngModel)]="employee.contactNumber" formControlName="contactNumber" id="contactNumber" class="form-control">
+        </div>
+        <div class="col-md-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" [(ngModel)]="employee.address" formControlName="address" id="address" class="form-control">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" aria-label="Add" (click)="this.submit()">Update</button>
+    <button type="button" class="btn btn-outline-dark" aria-label="Close"
+        (click)="activeModal.dismiss('Cancel Update')">Cancel</button>
+</div>

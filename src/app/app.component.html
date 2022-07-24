@@ -1,1 +1,17 @@
+<ul class="nav nav-tabs">
+  <img class="navbar-brand" style="width: 40px; height:40px;border-radius: 100%;" src="../assets/img/logo.png" alt="logo">
+  <li class="nav-item">
+    <a data-toggle="tab" class="nav-link" [routerLink]="['/employees/']">Employees</a>
+  </li>
+  <li class="nav-item">
+    <a data-toggle="tab" class="nav-link" [routerLink]="['/employees/', 5, 'edit']">Payroll</a>
+  </li>
+  <li class="nav-item">
+    <a data-toggle="tab" class="nav-link" href="#">Settings</a>
+  </li>
+  <li class="nav-item">
+    <a data-toggle="tab" class="nav-link" href="#">Admin</a>
+  </li>
+</ul>
 <router-outlet></router-outlet>
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>

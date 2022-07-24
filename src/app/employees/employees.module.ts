@@ -8,6 +8,10 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastsContainer } from '../toast/toasts-container.component';
+import { NgbModule, NgbToastModule, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { CompensationComponent } from './compensation/compensation.component';
 
 
 @NgModule({
@@ -16,11 +20,17 @@ import { RouterModule } from '@angular/router';
     ViewComponent,
     CreateComponent,
     EditComponent,
+    CompensationComponent
   ],
   imports: [
     CommonModule,
     EmployeesRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    NgbModule
+  ],
+  providers: [
+    NgbTooltip
   ]
 })
 export class EmployeesModule { }

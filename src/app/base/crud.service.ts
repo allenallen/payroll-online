@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { ResponseEntity } from '../base/response-entity';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root'
@@ -22,6 +23,8 @@ export abstract class CrudService<SingleEntity, ListEntity> {
     abstract getApiUrl(): string;
 
     abstract getHttpClient(): HttpClient;
+
+    abstract createFormGroup(): FormGroup;
 
     protected getHttpOptions() {
         return this.httpOptions;
