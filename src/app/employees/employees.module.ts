@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastsContainer } from '../toast/toasts-container.component';
 import { NgbModule, NgbToastModule, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CompensationComponent } from './compensation/compensation.component';
+import { httpInterceptorProviders } from '../helpers/http.interceptor';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { CompensationComponent } from './compensation/compensation.component';
     NgbModule
   ],
   providers: [
-    NgbTooltip
+    NgbTooltip, httpInterceptorProviders
   ]
 })
 export class EmployeesModule { }
