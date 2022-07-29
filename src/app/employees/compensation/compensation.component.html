@@ -1,15 +1,39 @@
 <div class="modal-header">
-    <h4 class="modal-title">{{this.employeeCompensation.employee.firstName + ' ' + this.employeeCompensation.employee.lastName}}</h4>
+    <h4 class="modal-title">{{this.employeeCompensation.employee.firstName + ' ' +
+        this.employeeCompensation.employee.lastName}}</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Close Modal')"></button>
 </div>
 <div class="modal-body">
     <form [formGroup]="this.compensationForm" (ngSubmit)="this.submit()" class="row g-3">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label for="daily" class="form-label">Daily Rate</label>
-            <input type="text" [(ngModel)]="employeeCompensation.daily" formControlName="daily" id="daily" class="form-control">
+            <input type="text" [(ngModel)]="employeeCompensation.daily" formControlName="daily" id="daily"
+                class="form-control">
             <div *ngIf="form['daily'].touched && form['daily'].invalid" class="alert alert-danger">
                 <div *ngIf="form['daily'].errors && form['daily'].errors['required']">Daily is required.
                 </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <input type="hidden" [ngModel]="employeeCompensation.id" formControlName="id">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sss" formControlName="sss"
+                    [checked]="employeeCompensation.sss">
+                <label for="sss" class="form-check-label">SSS</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="pagibig" formControlName="pagibig"
+                    [checked]="employeeCompensation.pagibig">
+                <label for="pagibig" class="form-check-label">Pagibig</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="philhealth" formControlName="philhealth"
+                    [checked]="employeeCompensation.philhealth">
+                <label for="philhealth" class="form-check-label">Philhealth</label>
             </div>
         </div>
     </form>
