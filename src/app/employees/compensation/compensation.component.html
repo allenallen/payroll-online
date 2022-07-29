@@ -18,21 +18,21 @@
             <input type="hidden" [ngModel]="employeeCompensation.id" formControlName="id">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="sss" formControlName="sss"
-                    [checked]="employeeCompensation.sss">
+                    [checked]="employeeCompensation.sss" [(ngModel)]="employeeCompensation.sss">
                 <label for="sss" class="form-check-label">SSS</label>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="pagibig" formControlName="pagibig"
-                    [checked]="employeeCompensation.pagibig">
+                    [checked]="employeeCompensation.pagibig" [(ngModel)]="employeeCompensation.pagibig">
                 <label for="pagibig" class="form-check-label">Pagibig</label>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="philhealth" formControlName="philhealth"
-                    [checked]="employeeCompensation.philhealth">
+                    [checked]="employeeCompensation.philhealth" [(ngModel)]="employeeCompensation.philhealth">
                 <label for="philhealth" class="form-check-label">Philhealth</label>
             </div>
         </div>

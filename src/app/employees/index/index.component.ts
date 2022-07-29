@@ -20,8 +20,8 @@ export class IndexComponent implements OnInit {
   employees: Employees[] = [];
   employeesCompensation: EmployeeCompensation[] = [];
 
-  constructor(public employeeService: EmployeesService, private modalService: NgbModal,
-            private toastService: ToastService, public employeeCompensationService: CompensationService) { }
+  constructor(public employeeService: EmployeesService, public employeeCompensationService: CompensationService, private modalService: NgbModal,
+            private toastService: ToastService) { }
 
   ngOnInit(): void {
    this.initEmployees();
@@ -55,8 +55,7 @@ export class IndexComponent implements OnInit {
 
   onViewEmployeeCompensationClick(employee: Employees) {
     let employeeCompensationModal = this.modalService.open(CompensationComponent);
-    const employeeCompensation = this.getEmployeeCompensation(employee);
-    employeeCompensationModal.componentInstance.employeeCompensation = employeeCompensation;
+    employeeCompensationModal.componentInstance.employeeCompensation = this.getEmployeeCompensation(employee);
 
     employeeCompensationModal.componentInstance.editResult.subscribe((res: ResponseEntity<EmployeeCompensation>) => {
       if (res) {

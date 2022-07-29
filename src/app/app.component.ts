@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { AppService } from './app.service';
-import { LoginModel } from './login/login';
 import { LoginService } from './login/login.service';
 import { StorageService } from './storage/storage.service';
 

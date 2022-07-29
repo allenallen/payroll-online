@@ -8,7 +8,7 @@ import { EmployeeCompensation } from './employee-compensation';
   providedIn: 'root'
 })
 export class CompensationService extends CrudService<EmployeeCompensation, EmployeeCompensation[]>{
-  
+
   constructor(private httpClient: HttpClient) {
     super();
   }
@@ -16,7 +16,7 @@ export class CompensationService extends CrudService<EmployeeCompensation, Emplo
   getApiUrl(): string {
     return 'api/v1/employeeCompensation'
   }
-  
+
   getHttpClient(): HttpClient {
     return this.httpClient;
   }

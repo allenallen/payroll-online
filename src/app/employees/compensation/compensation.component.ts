@@ -11,13 +11,11 @@ import { EmployeeCompensation } from '../employee-compensation';
   styleUrls: ['./compensation.component.scss']
 })
 export class CompensationComponent implements OnInit {
-
+  compensationForm!: FormGroup;
   @Input() public employeeCompensation!:EmployeeCompensation;
   @Output() editResult: EventEmitter<ResponseEntity<EmployeeCompensation>> = new EventEmitter();
 
-  compensationForm!: FormGroup;
-
-  constructor(public activeModal: NgbActiveModal, private employeeCompensationService: CompensationService) { }
+  constructor(public employeeCompensationService: CompensationService, public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
     if (!this.employeeCompensation) this.editResult.emit(undefined);

@@ -9,7 +9,6 @@ import { EmployeesModule } from './employees/employees.module';
 import { ToastsContainer } from './toast/toasts-container.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { AppService } from './app.service';
 import { httpInterceptorProviders } from './helpers/http.interceptor';
 
 @NgModule({
@@ -24,7 +23,7 @@ import { httpInterceptorProviders } from './helpers/http.interceptor';
     NgbModule,
     FormsModule
   ],
-  providers: [AppService, httpInterceptorProviders],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
