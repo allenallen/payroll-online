@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Income Settings</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Close Modal')"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="this.createForm" (ngSubmit)="this.submit()" class="row g-3">
+    <div class="col-md-12">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" formControlName="name" id="name" class="form-control">
+      <div *ngIf="form['name'].touched && form['name'].invalid" class="alert alert-danger">
+        <div *ngIf="form['name'].errors && form['name'].errors['required']">Name is required.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <label for="value" class="form-label">Value</label>
+      <input type="text" formControlName="value" id="value" class="form-control">
+      <div *ngIf="form['value'].touched && form['value'].invalid" class="alert alert-danger">
+        <div *ngIf="form['value'].errors && form['value'].errors['required']">Value is required.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="fixed" formControlName="fixed"
+               [checked]="this.percentage" (change)="this.percentage = !this.percentage">
+        <label for="fixed" class="form-check-label">Fixed</label>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" aria-label="Add" (click)="this.submit()">Add</button>
+  <button type="button" class="btn btn-outline-dark" aria-label="Close"
+          (click)="activeModal.dismiss('Cancel Create')">Cancel</button>
+</div>

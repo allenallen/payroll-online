@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <h1>Income Settings</h1>
+    <div>
+      <p class="text-capitalize fst-italic">Additional income on payroll (eg. Overtime Pay)</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <table class="table table-striped table-hover align-middle">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+        <th>
+          <a style="margin-right: 5px;" (click)="this.onCreateClick()" class="btn btn-primary">+ New</a>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let incomeSetting of incomeSettings">
+        <td>{{incomeSetting.name}}</td>
+        <td>{{incomeSetting.fixed ? incomeSetting.value : incomeSetting.value + ' %'}}</td>
+        <td>
+            <a (click)="this.onDeleteClick(incomeSetting)" class="btn btn-outline-danger" placement="top" ngbTooltip="Delete" style="margin-right:5px;"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

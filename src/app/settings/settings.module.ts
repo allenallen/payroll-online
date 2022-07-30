@@ -6,11 +6,15 @@ import {NgbModule, NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CreateComponent } from './deduction/create/create.component';
+import {IncomeCreateComponent} from './income/create/create.component';
+import { IncomeComponent } from './income/income.component';
 
 
 @NgModule({
   declarations: [
-    CreateComponent
+    CreateComponent,
+    IncomeComponent,
+    IncomeCreateComponent
   ],
   imports: [
     CommonModule,
