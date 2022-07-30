@@ -15,7 +15,7 @@
       <li class="nav-item">
         <button id="settingsDropdown" class="nav-link dropdown-toggle btn btn-outline-light" ngbDropdownToggle>Settings</button>
         <div ngbDropdownMenu aria-labelledby="settingsDropdown">
-          <a ngbDropdownItem href="#">Deduction Types</a>
+          <a ngbDropdownItem [routerLink]="['/deductionTypes/']">Deduction Types</a>
           <a ngbDropdownItem href="#">Income Types</a>
         </div>
       </li>

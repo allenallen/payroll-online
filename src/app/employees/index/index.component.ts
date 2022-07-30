@@ -30,11 +30,9 @@ export class IndexComponent implements OnInit {
   onCreateClick() {
     let createModal = this.modalService.open(CreateComponent);
     createModal.componentInstance.createResult.subscribe((res: ResponseEntity<Employees>) => {
-      if (res.message === "Success") {
-        this.initEmployees();
-        this.toastService.show('Added successfully', {classname: 'bg-success text-light'});
-        createModal.dismiss();
-      }
+      this.initEmployees();
+      this.toastService.show('Added successfully', {classname: 'bg-success text-light'});
+      createModal.dismiss();
     })
   }
 

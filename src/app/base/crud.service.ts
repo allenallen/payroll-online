@@ -61,6 +61,13 @@ export abstract class CrudService<SingleEntity, ListEntity> {
             );
     }
 
+    delete(id: number): Observable<ResponseEntity<string>> {
+      return this.getHttpClient().delete<ResponseEntity<string>>(this.baseUrl + this.getApiUrl() + '/' + id, this.httpOptions)
+        .pipe(
+          catchError(this.errorHandler)
+        );
+    }
+
     errorHandler(error: any) {
         let errorMessage = '';
         if (error.error instanceof ErrorEvent) {

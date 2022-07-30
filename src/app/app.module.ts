@@ -10,10 +10,12 @@ import { ToastsContainer } from './toast/toasts-container.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { httpInterceptorProviders } from './helpers/http.interceptor';
+import {SettingsModule} from "./settings/settings.module";
+import { DeductionComponent } from './settings/deduction/deduction.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ToastsContainer, LoginComponent
+    AppComponent, ToastsContainer, LoginComponent, DeductionComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { httpInterceptorProviders } from './helpers/http.interceptor';
     EmployeesModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    SettingsModule
   ],
   providers: [httpInterceptorProviders, NgbDropdown],
   bootstrap: [AppComponent]

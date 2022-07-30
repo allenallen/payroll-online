@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Deduction Type</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Close Modal')"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="this.createForm" (ngSubmit)="this.submit()" class="row g-3">
+    <div class="col-md-12">
+      <label for="type" class="form-label">Type</label>
+      <input type="text" formControlName="type" id="type" class="form-control">
+      <div *ngIf="form['type'].touched && form['type'].invalid" class="alert alert-danger">
+        <div *ngIf="form['type'].errors && form['type'].errors['required']">Type is required.
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" aria-label="Add" (click)="this.submit()">Add</button>
+  <button type="button" class="btn btn-outline-dark" aria-label="Close"
+          (click)="activeModal.dismiss('Cancel Create')">Cancel</button>
+</div>
